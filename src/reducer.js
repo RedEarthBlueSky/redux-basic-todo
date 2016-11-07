@@ -12,7 +12,7 @@ export default function(todos=init, action) {
       return todos.push(Map(action.payload));  //  converts todo obect to immutable method
     case 'TOGGLE_TODO':
       return todos.map(t => {
-        if (t.get('id' === action.payload) {
+        if (t.get('id') === action.payload) {
           return t.update('isDone', isDone => !isDone);
         } else {
           return t;
@@ -20,5 +20,5 @@ export default function(todos=init, action) {
       });
     default:
       return todos;
-  }
+    }
 }
