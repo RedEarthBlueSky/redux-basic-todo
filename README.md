@@ -2,6 +2,19 @@
 
 ####Redux
 
+Make components
+Design actions
+Implement reduce
+Connect Components
+
+Tutorial from
+
+https://www.sitepoint.com/how-to-build-a-todo-app-using-react-redux-and-immutable-js/
+
+Repo
+
+https://github.com/sitepoint-editors/immutable-redux-todo/tree/master/src
+
 Library container to manage application state, provided:
 
 State is kept in a single store
