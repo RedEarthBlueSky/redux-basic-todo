@@ -1,12 +1,13 @@
 # redux-basic-todo
 
-Redux
-A tiny library that is a container for our application state, To manage any kind of application state, provided:
+####Redux
+
+Library container to manage application state, provided:
 
 State is kept in a single store
 Changes come from actions not mutations
 
-The Redux store core is a function - a reducer - that takes current application state and an action and combines them to create a new application state.
+The Redux store core is a function - a **reducer** - that takes current application state and an action and combines them to create a new application state.
 
 React components will be responsible to sending actions to our store and in turn our store will tell the components when they need to re-render.
 
@@ -20,3 +21,35 @@ Create package.json with npm init
 
 npm install --save react react-dom redux react-redux immutable
 npm install --save-dev webpack babel-loader babel-preset-es2015 babel-preset-react
+
+
+
+Using JSX and ES2015, compile code with Babel and we’re going to do this as part of the module bundling process with Webpack.
+
+First we’ll create our Webpack configuration in webpack.config.js.
+
+module.exports = {
+  entry: './src/app.js',
+  output: {
+    path: __dirname,
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: { presets: [ 'es2015', 'react' ] }
+      }
+    ]
+  }
+};
+
+extend package.json by adding an npm script to compile our code with source maps.
+
+"scripts": {
+  "build": "webpack --debug"
+}
+
+run npm run build to compile code.
