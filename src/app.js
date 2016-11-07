@@ -9,3 +9,8 @@ const dummyTodos = [
   { id: 2, isDone: false, text: 'implement reducer' },
   { id: 3, isDone: false, text: 'connect components' }
 ];
+
+render(
+  <TodoList todos={dummyTodos} />,
+  document.getElementById('app')
+)
