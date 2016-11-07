@@ -5,7 +5,7 @@
 Make components
 Design actions
 Implement reduce
-Connect Components
+Connect Components //  create a store to connect it to our react components
 
 Tutorial from
 
